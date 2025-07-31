@@ -44,6 +44,11 @@ if (verificacao) {
 
 //ARROW FUNCTION
 
-const somar = (10, 10) => {
-    return x + y;
-}
+const somar1 = (x, y) => {
+  return x + y;
+};
+
+console.log(somar1(10, 5));
+
+//VARIAVEIS DENTRO E FORA DE FUNCOES
+
