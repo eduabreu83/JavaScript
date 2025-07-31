@@ -41,3 +41,9 @@ if (verificacao) {
 } else{
     console.log('é menor de idade')
 }
+
+//ARROW FUNCTION
+
+const somar = (10, 10) => {
+    return x + y;
+}
