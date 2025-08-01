@@ -24,3 +24,16 @@ let pessoa = {
 }
 
 console.log(pessoa.carros[1].modelo);
+
+
+/// funçoes dentro de um objeto
+let pessoa1 = {
+    nome: 'Davi',
+    sobreNome: 'Abreu',
+    idade: 90,
+    nomeCompleto: function() {
+        return `${this.nome} ${this.sobreNome}`; // o this quase não é utilizado
+    }
+}
+
+console.log(pessoa1.nomeCompleto()); 
