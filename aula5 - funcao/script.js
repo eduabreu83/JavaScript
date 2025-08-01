@@ -51,4 +51,28 @@ const somar1 = (x, y) => {
 console.log(somar1(10, 5));
 
 //VARIAVEIS DENTRO E FORA DE FUNCOES
+// 99% das variaveis estrão fora da funçao 
+let count = 0; // variavel de escopo globlal  // quando temos dentro é de escopo local
 
+function add() {
+    count++;
+}
+
+add();
+add();
+
+console.log(count);
+
+
+function addSquare(a,b) {
+    //dica do professor, realizar uma funçao dentro de outra a funça pode ser por arrow function
+    const square = (x) => {
+    return x * x;
+}
+
+    let sqra = square(a);
+    let sqrb = square(b);
+    return sqra + sqrb;
+}
+
+console.log(addSquare(2, 3))
