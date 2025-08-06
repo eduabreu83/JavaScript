@@ -1,2 +1,9 @@
 const char = createKnight ('Eduardo')
-const monster = creatLittleMosnter()
+const monster = createLittleMosnter()
+
+stage.start(
+    char,
+    monster,
+    document.querySelector('#char'),
+    document.querySelector('#monster')
+);

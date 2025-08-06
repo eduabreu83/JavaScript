@@ -28,7 +28,7 @@ const createSorcerer = (name) => {
     }
 }
 
-const creatLittleMosnter = () => {
+const createLittleMosnter = () => {
     return{
         ...defaultCharacter,
         name: 'Little Monster',
@@ -48,4 +48,39 @@ const createBigMonster = () => {
         attack:16,
         defense:6
     }
+}
+
+const stage = {
+    fighter1: null,
+    fighter2: null,
+    fighter1El: null,
+    fighter2El: null,
+
+    start(fighter1, fighter2, fighter1El, fighter2El){
+        this.fighter1 = fighter1;
+        this.fighter2 = fighter2;
+        this.fighter1El = fighter1El;
+        this.fighter2El = fighter2El;
+
+        this.fighter1El.querySelector('.attackButton').addEventListener('click', () => this.doAttack(this.fighter1, this.fighter2) );
+
+        
+        this.fighter2El.querySelector('.attackButton').addEventListener('click', () => this.doAttack(this.fighter2, this.fighter1) );
+
+        this.update();
+    },
+    
+    update(){
+        //Fighter1
+        this.fighter1.querySelector('.name').innerHTML = `${this.fighter1.name} - ${this.fighter1.life.tofixed(1)} HP`;
+
+        //Fighter2
+        this.fighter2.querySelector('.name').innerHTML = `${this.fighter2.name} - ${this.fighter2.life.tofixed(1)} HP` 
+
+    },
+
+    doAttack(attacking, attacked){
+
+    }
+
 }
