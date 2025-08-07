@@ -103,7 +103,7 @@ let listaPessoa = [
 ]
 
 let pessoa = listaPessoa.find(function(item2){
-aula13 - String, array, numeros    return (item2.sobrenome == 'abreu') ? true : false
+return (item2.sobrenome == 'abreu') ? true : false
 })
 
 console.log(pessoa)
