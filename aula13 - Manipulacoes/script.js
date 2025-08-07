@@ -152,3 +152,13 @@ function showtime(){
     document.querySelector('.demo').innerHTML = txt
 }
 
+let timer2
+function comecar1(){
+timer2 = setTimeout(function(){
+    document.querySelector('#text').innerHTML = 'Rodou'
+},4000)
+}
+
+function parar1(){
+    clearTimeout(timer2)
+}
