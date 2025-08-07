@@ -118,4 +118,37 @@ console.log(d.getDay())// retorna o dia da semana em numero
 console.log(d.getDate())
 console.log(d.getHours())
 
+d.setDate(7)
+d.setDate(d.getDate() + 12)
+let = novovalor = d
+console.log(novovalor)
+
+let novoNumero = Math.round(Math.PI)
+console.log(novoNumero)
+
+
+console.log(Math.min(1,4,5,7,5))
+console.log(Math.max(1,4,5,7,5))
+console.log(Math.random())
+
+let timer;
+
+function comecar(){
+    timer = setInterval(showtime,1000)
+}
+
+function parar(){
+    clearInterval(timer)
+}
+
+function showtime(){
+    let d = new Date();
+    let h = d.getHours();
+    let mi = d.getMinutes();
+    let s = d.getSeconds();
+
+    let txt = h+':'+mi+':'+s
+
+    document.querySelector('.demo').innerHTML = txt
+}
 
