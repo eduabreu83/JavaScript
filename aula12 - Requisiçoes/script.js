@@ -1,4 +1,4 @@
-/*function clicou(){
+function clicou(){
     fetch ('https://jsonplaceholder.typicode.com/posts')
         .then( (response) => {
             return response.json();
@@ -45,7 +45,7 @@ function inserir(){
 
 document.querySelector('#inserir').addEventListener('click',inserir)
 document.querySelector('#botao').addEventListener('click',clicou)
-*/
+
 // Outro modelo com função e mais comun de utilização
 
 async function clicou() {
