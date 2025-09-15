@@ -3,11 +3,14 @@ let correctAnswers = 0;
 
 showQuestion();
 
+document.querySelector('.scoreArea button').addEventListener('click', resetEvent)
+
 function showQuestion(){
     if(questions[currentQuestion]){
         let q = questions[currentQuestion];
 
-        let pct = (currentQuestion / questions.length) * 100;
+        let pct = Math.floor((currentQuestion / questions.length)* 100);
+        document.querySelector('.progress--bar').style.width = `${pct}%`
 
         document.querySelector('.scoreArea').style.display = 'none';
         document.querySelector('.questionArea').style.display = 'block';
@@ -25,7 +28,7 @@ function showQuestion(){
             item.addEventListener('click', optionClickEvent)
          })
     }else{
-        // acabram
+        finishQuiz();// acabram
     }
 }
 
@@ -40,4 +43,33 @@ function optionClickEvent(e){
     currentQuestion++;
     showQuestion()
 
+}
+
+function finishQuiz(){
+    let points = Math.floor((correctAnswers / questions.length) *100)
+
+    if(points < 30){
+        document.querySelector('.scoreText1').innerHTML = 'Tá ruim hein?!';
+        document.querySelector('.scorePct').style.color = '#FF0000';
+    }else if(points >= 30 && points <70){
+        document.querySelector('.scoreText1').innerHTML = 'Muito bom!';
+        document.querySelector('.scorePct').style.color = '#ffff00';
+    }else if(points >=70){
+        document.querySelector('.scoreText1').innerHTML = 'Parabéns';
+        document.querySelector('.scorePct').style.color = '#0d630d';
+    }
+
+    document.querySelector('.scorePct').innerHTML = `Acertou ${points}%`
+    document.querySelector('.scoreText2').innerHTML = `Você respondeu ${questions.length} questões e acertou ${correctAnswers}`;
+
+
+    document.querySelector('.scoreArea').style.display = 'block';
+    document.querySelector('.questionArea').style.display = 'none';
+    document.querySelector('.progress--bar').style.width = '100%';
+}
+
+function resetEvent(){
+    currentQuestion = 0;
+    correctAnswers = 0;
+    showQuestion();
 }
