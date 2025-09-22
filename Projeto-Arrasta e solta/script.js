@@ -20,8 +20,9 @@ function dragEnd(e){
 }
 
 function dragOver(e){
-    e.preventDefault();
-    e.currentTarget.classlist.add('hover')
+    if(e.currentTarget.querySelector('.item')=== null){
+        e.preventDefault();
+        e.currentTarget.classlist.add('hover')
 }
 
 function dragLeave(e){
@@ -31,4 +32,9 @@ function dragLeave(e){
 
 function drop(e){
     e.currentTarget.classlist.remove('hover')
+    
+    if(e.currentTarget.querySelector('.item')=== null){
+        let dragItem = document.querySelector('item.dragging')
+        e.currentTarget.appendChild(dragItem)
+    }
 }
